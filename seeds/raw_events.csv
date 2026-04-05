@@ -1,0 +1,11 @@
+event_id,user_id,event_type,event_properties,occurred_at,session_id,platform,ip_address
+evt_001,usr_001,page_view,"{""page"":""/dashboard"",""duration"":45}",2026-04-05 08:00:00,sess_abc123,web,192.168.1.1
+evt_002,usr_001,button_click,"{""button"":""submit"",""form"":""contact"",""success"":true}",2026-04-05 08:01:30,sess_abc123,web,192.168.1.1
+evt_003,usr_003,page_view,"{""page"":""/analytics"",""duration"":120}",2026-04-05 08:00:00,sess_def456,web,192.168.1.2
+evt_004,usr_003,export,"{""type"":""csv"",""records"":1500}",2026-04-05 08:02:00,sess_def456,web,192.168.1.2
+evt_005,usr_007,page_view,"{""page"":""/settings"",""duration"":30}",2026-04-05 07:45:00,sess_ghi789,web,192.168.1.3
+evt_006,usr_006,feature_use,"{""feature"":""api_access"",""calls"":50}",2026-04-05 08:00:00,sess_jkl012,web,192.168.1.4
+evt_007,usr_002,page_view,"{""page"":""/pricing"",""duration"":60}",2024-02-15 10:30:00,sess_mno345,web,192.168.1.5
+evt_008,usr_005,signup,"{""method"":""google"",""referral"":null}",2024-03-20 10:00:00,sess_pqr678,web,192.168.1.6
+evt_009,usr_001,subscription_change,"{""from"":""free"",""to"":""pro"",""mrr"":29}",2024-01-20 14:30:00,sess_stu901,web,192.168.1.1
+evt_010,usr_004,cancellation,"{""reason"":""too_expensive"",""feedback"":null}",2024-06-15 00:00:00,sess_vwx234,web,192.168.1.7

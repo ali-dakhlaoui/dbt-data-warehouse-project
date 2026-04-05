@@ -1,0 +1,26 @@
+name: 'data_warehouse_duckdb'
+version: '1.0.0'
+config-version: 2
+
+profile: 'data_warehouse_duckdb'
+
+require-dbt-version: [">=1.5.0"]
+
+vars:
+  telemetry_schema: staging
+  marts_schema: marts
+
+on-run-start:
+  - "{{ create_schemas() }}"
+
+models:
+  data_warehouse_duckdb:
+    staging:
+      +schema: staging
+      +materialized: view
+    intermediate:
+      +schema: intermediate
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table

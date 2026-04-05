@@ -1,0 +1,9 @@
+user_id,email,full_name,company,plan,created_at,converted_at,churned_at,last_login_at
+usr_001,alice@acme.com,Alice Johnson,Acme Corp,pro,2024-01-15 08:00:00,2024-01-20 14:30:00,,2026-04-04 09:15:00
+usr_002,bob@techstart.io,Bob Smith,TechStart,free,2024-02-01 10:00:00,,,2024-02-15 11:00:00
+usr_003,carol@bigcorp.com,Carol Williams,BigCorp,enterprise,2024-01-10 09:00:00,2024-01-10 09:30:00,,2026-04-05 08:00:00
+usr_004,david@startup.co,David Brown,StartupCo,pro,2024-03-01 12:00:00,2024-03-05 16:00:00,2024-06-15 00:00:00,
+usr_005,eve@innovate.io,Eve Davis,Innovate,free,2024-03-15 14:00:00,,,2024-03-20 10:00:00
+usr_006,frank@megacorp.com,Frank Miller,MegaCorp,enterprise,2024-02-20 11:00:00,2024-02-20 11:30:00,,2026-04-04 17:30:00
+usr_007,grace@cloudtech.com,Grace Wilson,CloudTech,pro,2024-04-01 08:30:00,2024-04-03 10:00:00,,2026-04-05 07:45:00
+usr_008,henry@dataflow.io,Henry Taylor,DataFlow,free,2024-04-10 15:00:00,,,2024-04-12 09:00:00

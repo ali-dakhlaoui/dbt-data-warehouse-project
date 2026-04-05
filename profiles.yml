@@ -1,0 +1,10 @@
+data_warehouse_duckdb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'dev_warehouse.duckdb'
+      extensions:
+        - parquet
+        - httpfs
+        - delta

@@ -1,0 +1,106 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: User dimension table with current and historical attributes
+    columns:
+      - name: user_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: User email
+      - name: full_name
+        description: User full name
+      - name: company
+        description: Company name
+      - name: current_plan
+        description: Current subscription plan
+      - name: user_status
+        description: Current status (free, converted, churned)
+      - name: created_at
+        description: Account creation date
+      - name: converted_at
+        description: Date converted to paid
+      - name: days_since_conversion
+        description: Days since conversion
+      - name: is_active
+        description: Boolean flag for active users
+
+  - name: dim_subscriptions
+    description: Subscription dimension table
+    columns:
+      - name: subscription_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: Foreign key to dim_users
+      - name: plan
+        description: Subscription plan
+      - name: status
+        description: Subscription status
+      - name: is_active
+        description: Boolean flag for active subscriptions
+      - name: mrr
+        description: Monthly recurring revenue in dollars
+      - name: subscription_duration_days
+        description: Duration of subscription
+
+  - name: dim_events
+    description: Event dimension table
+    columns:
+      - name: event_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: Foreign key to dim_users
+      - name: event_type
+        description: Type of event
+      - name: platform
+        description: Platform (web, ios, android)
+      - name: event_date
+        description: Date of event (for partitioning)
+      - name: event_hour
+        description: Hour of event (0-23)
+
+  - name: fact_events
+    description: Fact table for event metrics
+    columns:
+      - name: event_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: Foreign key to dim_users
+      - name: occurred_at
+        description: When event occurred
+      - name: event_date
+        description: Date dimension key
+      - name: event_hour
+        description: Hour dimension key
+
+  - name: fact_daily_metrics
+    description: Daily aggregated metrics
+    columns:
+      - name: date
+        description: Date
+        tests:
+          - unique
+      - name: daily_active_users
+        description: Count of unique users
+      - name: total_events
+        description: Total event count
+      - name: new_users
+        description: New user registrations
+      - name: converted_users
+        description: Users converted to paid
+      - name: churned_users
+        description: Users who churned
+      - name: mrr
+        description: Total MRR

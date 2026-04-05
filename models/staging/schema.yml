@@ -1,0 +1,79 @@
+version: 2
+
+sources:
+  - name: telemetry
+    description: Raw telemetry data from SaaS application
+    schema: main
+    tables:
+      - name: raw_events
+        description: Application events (page views, clicks, etc.)
+        columns:
+          - name: event_id
+            description: Unique event identifier
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            description: User who triggered the event
+            tests:
+              - not_null
+          - name: event_type
+            description: Type of event
+          - name: event_properties
+            description: JSON containing event-specific properties
+          - name: occurred_at
+            description: When the event occurred
+            tests:
+              - not_null
+          - name: session_id
+            description: Browser session identifier
+          - name: platform
+            description: Web, iOS, Android
+          - name: ip_address
+            description: User's IP address
+
+      - name: raw_users
+        description: User account information
+        columns:
+          - name: user_id
+            description: Unique user identifier
+            tests:
+              - unique
+              - not_null
+          - name: email
+            tests:
+              - unique
+              - not_null
+          - name: full_name
+          - name: company
+          - name: plan
+            description: Subscription plan (free, pro, enterprise)
+          - name: created_at
+            tests:
+              - not_null
+          - name: converted_at
+            description: When user converted from free to paid
+          - name: churned_at
+            description: When user cancelled their subscription
+          - name: last_login_at
+
+      - name: raw_subscriptions
+        description: Subscription and billing records
+        columns:
+          - name: subscription_id
+            description: Unique subscription identifier
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            tests:
+              - not_null
+          - name: plan
+          - name: status
+            description: active, cancelled, past_due
+          - name: started_at
+            tests:
+              - not_null
+          - name: ended_at
+          - name: mrr
+            description: Monthly recurring revenue in cents

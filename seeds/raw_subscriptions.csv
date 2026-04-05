@@ -1,0 +1,7 @@
+subscription_id,user_id,plan,status,started_at,ended_at,mrr
+sub_001,usr_001,pro,active,2024-01-20 14:30:00,,2900
+sub_002,usr_003,enterprise,active,2024-01-10 09:30:00,,9900
+sub_003,usr_004,pro,active,2024-03-05 16:00:00,,2900
+sub_004,usr_004,pro,cancelled,2024-03-05 16:00:00,2024-06-15 00:00:00,2900
+sub_005,usr_006,enterprise,active,2024-02-20 11:30:00,,9900
+sub_006,usr_007,pro,active,2024-04-03 10:00:00,,2900
